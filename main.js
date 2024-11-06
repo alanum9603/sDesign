@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menusTitle = document.querySelectorAll(".menu-title");
     const screenWidth = window.innerWidth;
 
-    if (screenWidth < 1500) {
+    if (screenWidth < 1200) {
         menusTitle.forEach(item => {
             item.style.display = "none"
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener('resize', () => {
-        if (screenWidth < 1500) {
+        if (screenWidth < 1200) {
             menusTitle.forEach(item => {
                 item.style.display = "none"
 
