@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menusTitle = document.querySelectorAll(".menu-title");
     const logo = document.getElementsByClassName("logo");
 
-
     menuToogle.addEventListener("click", () => {
         if(menu.style.width === "260px") {
             menusTitle.forEach(item => {
@@ -26,4 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.style.width = "260px"
         }
     })
+
 })
