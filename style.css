@@ -267,13 +267,13 @@ h1.sec-title {
   gap: 7px;
 }
 
-.card-catalog {
+.card-list {
   display: grid;
   padding: 15px;
   gap: 15px;
 }
 
-.card-catalog>h1 {
+.card-list>h1 {
   padding: 0%;
   margin: 0%;
   font-size: large;
@@ -347,7 +347,6 @@ h1.sec-title {
     >img {
       width: 100%;
       height: 75%;
-      border-radius: 5px;
     }
   }
 
@@ -382,6 +381,43 @@ h1.sec-title {
 
 }
 
+/* 
+
+  Catalog
+
+*/
+
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.catalog-item {
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  width: 100%;
+  height: 250px;
+
+  >img {
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  .catalog-item-desc {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content auto min-content;
+
+    > :first-child {
+      justify-content: space-between;
+    }
+
+  }
+}
+
 /*
 
   Utils
@@ -398,10 +434,7 @@ h1.sec-title {
 
 img {
   background-color: #DBDBDB;
-  border-style: solid;
   border-radius: 10px;
-  border-color: #DBDBDB;
-  border-width: 0.5px;
 }
 
 input,
