@@ -407,9 +407,20 @@ h1.sec-title {
   }
 
   .catalog-item-desc {
+    font-size: small;
     display: grid;
+    padding: 5px;
     grid-template-columns: 1fr;
     grid-template-rows: min-content auto min-content;
+
+    >div>button {
+      font-size: small;
+      padding: 3px;
+    }
+
+    >div>h1 {
+      font-size: medium;
+    }
 
     > :first-child {
       justify-content: space-between;
