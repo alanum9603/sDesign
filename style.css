@@ -27,7 +27,6 @@ body {
   grid-template-columns: auto 1fr;
   grid-template-rows: 60px auto;
   justify-content: center;
-  gap: 0.5px;
   background-color: #F7F7F7;
 }
 
@@ -117,6 +116,10 @@ li>a>i {
   width: 60px;
 }
 
+li>i {
+  width: 60px;
+}
+
 i {
   margin: 0;
   text-align: center;
@@ -132,17 +135,18 @@ i {
 
 header {
   background-color: #FFFFFF;
-  width: 100%;
+  width: auto;
   height: 60px;
   padding: 0px;
   border-style: solid;
-  border-bottom-width: 0.5px;
-  border-top-width: 0px;
-  border-color: #DBDBDB;
+  border-width: 0;
+  border-bottom-width: 5px;
+  border-color: yellowgreen;
   display: flex;
   justify-content: space-between;
   grid-column: 2/3;
   grid-row: 1/2;
+  gap: 5px;
 }
 
 .header-item {
@@ -165,12 +169,11 @@ header {
   background-color: #F7F7F7;
   gap: 25px;
   max-width: 1600px;
-  background-color: yellowgreen;
 }
 
 /* 
 
- Catalog
+ HomePage
 
 */
 
@@ -386,7 +389,6 @@ button {
         padding: 5px;
       }
     }
-
 
   }
 
