@@ -103,8 +103,8 @@ a {
 .menu>ul>.section>li {
   display: flex;
   align-items: center;
-  font-size: 2vh;
-  height: 4.2vh;
+  font-size: 2.1vh;
+  height: 4.1vh;
   white-space: nowrap;
 }
 
