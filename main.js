@@ -10,15 +10,16 @@ const navigateTo = (url) => {
     history.pushState(null, null, url)
     router();
 }
+console.log(`path: ${location.pathname}`)
 
 const loadHTML = async (route, container) => {
     fetch(route)
         .then(response => {
-            if (response.ok){
+            if (response.ok) {
                 return response.text();
             } else {
                 throw new Error(`Error al cargar ${url}: ${response.statusText}`)
-            } 
+            }
         })
         .then(htmlContent => {
             document.getElementById(container).innerHTML = htmlContent;
@@ -27,10 +28,11 @@ const loadHTML = async (route, container) => {
 
 const router = async () => {
     const routes = [
-        {path: "/", view: () => loadHTML("./src/homepage.html","container")},
-        {path: "/catalog", view: () => loadHTML("./src/catalog.html","container")},
-        {path: "/product", view: () => loadHTML("./src/product.html","container")}
+        { path: "/", view: () => loadHTML("./src/homepage.html", "container") },
+        { path: "/catalog", view: () => loadHTML("./src/catalog.html", "container") },
+        { path: "/product", view: () => loadHTML("./src/product.html", "container") }
     ];
+
 
     const potentialMatches = routes.map(route => ({
         route,
@@ -40,11 +42,11 @@ const router = async () => {
     let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch);
 
     if (!match) {
-        match = {route: routes[0], isMatch: true}
+        match = { route: routes[0], isMatch: true }
     }
 
     match.route.view();
-} 
+}
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
     const menuToogle = document.getElementById("menu-toggle");
