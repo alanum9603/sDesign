@@ -28,9 +28,9 @@ const loadHTML = async (route, container) => {
 
 const router = async () => {
     const routes = [
-        { path: "/", view: () => loadHTML("./src/homepage.html", "container") },
-        { path: "/catalog", view: () => loadHTML("./src/catalog.html", "container") },
-        { path: "/product", view: () => loadHTML("./src/product.html", "container") }
+        { path: "/", view: () => loadHTML("/homepage.html", "container") },
+        { path: "/catalog", view: () => loadHTML("/catalogpage.html", "container") },
+        { path: "/product", view: () => loadHTML("/productpage.html", "container") }
     ];
 
 

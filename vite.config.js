@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '', // Cambia esto al subdirectorio en el que estará tu aplicación
+    base: '/', // Cambia esto al subdirectorio en el que estará tu aplicación
     // otras configuraciones
+    publicDir: 'public',
 });
