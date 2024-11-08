@@ -47,11 +47,13 @@ const router = async () => {
 
     match.route.view();
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("menu");
     const menuToogle = document.getElementById("menu-toggle");
     const menusTitle = document.querySelectorAll(".menu-title");
     const screenWidth = window.innerWidth;
+    const miniMenuCloser = document.getElementById("mini-menu-closer")
 
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
@@ -62,21 +64,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     router()
 
-    if (screenWidth < 1200) {
+    if (screenWidth < 1100) {
         menusTitle.forEach(item => {
             item.style.display = "none"
 
         });
         menu.style.width = "60px";
+        miniMenuCloser.style.visibility = "visible";
     } else {
         menusTitle.forEach(item => {
-            item.style.display = "flex"
+            item.style.display = "flex";
         });
-        menu.style.width = "260px"
+        menu.style.width = "260px";
+        miniMenuCloser.style.visibility = "hidden";
     }
 
     window.addEventListener('resize', () => {
-        if (screenWidth < 1200) {
+        if (screenWidth < 1100) {
             menusTitle.forEach(item => {
                 item.style.display = "none"
 
@@ -91,18 +95,34 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     menuToogle.addEventListener("click", () => {
+        if (screenWidth < 1100) {
+            menu.style.position = "fixed";
+            menu.style.top = "0";
+        } else {
+            menu.style.position = "sticky";
+            menu.style.zIndex = "1";
+        }
         if (menu.style.width === "260px") {
             menusTitle.forEach(item => {
-                item.style.display = "none"
+                item.style.display = "none";
 
             });
             menu.style.width = "60px";
         } else {
             menusTitle.forEach(item => {
-                item.style.display = "flex"
+                item.style.display = "flex";
             });
-            menu.style.width = "260px"
+            menu.style.width = "260px";
         }
     })
 
+    miniMenuCloser.addEventListener("click", () => {
+        if (menu.style.width === "260px") {
+            menusTitle.forEach(item => {
+                item.style.display = "none";
+
+            });
+            menu.style.width = "60px";
+        }
+    })
 })

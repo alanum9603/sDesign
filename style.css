@@ -1,19 +1,3 @@
-/* 
-  Container 
-*/
-
-.container {
-  margin: 0 auto;
-  padding: 25px;
-  height: fit-content;
-  grid-column: 2/3;
-  grid-row: 2/3;
-  display: grid;
-  background-color: #F7F7F7;
-  gap: 25px;
-  max-width: 1600px;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
@@ -60,8 +44,21 @@ a {
 .logo {
   height: 60px;
   width: auto;
+  display: flex;
   background-color: #930000;
   white-space: nowrap;
+
+  > :nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    >button {
+      margin: 5px;
+      padding: 2px;
+      height: fit-content;
+    }
+  }
 }
 
 #logo {
@@ -71,7 +68,6 @@ a {
   border-radius: 50px;
   background-color: transparent;
   border-color: transparent;
-
   overflow: hidden;
 }
 
@@ -100,7 +96,7 @@ a {
   padding: 0%;
   font-size: small;
   color: #AF6868;
-  height: 4vh;
+  height: 5vh;
   padding-left: 10px;
 }
 
@@ -381,13 +377,23 @@ h1.sec-title {
 
   > :nth-child(6) {
     grid-column: 3/5;
-    grid-row: 3/5;
-    white-space: wrap;
-    line-height: 1.56;
+    grid-row: 3/4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding: 0;
     margin: auto 0;
   }
 
+  > :nth-child(7) {
+    grid-column: 3/5;
+    grid-row: 4/5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: auto 0;
+  }
 }
 
 /* 
@@ -445,10 +451,6 @@ h1.sec-title {
     > :nth-child(2) {
       height: fit-content;
 
-      >p {
-        margin: 0;
-        padding: 0;
-      }
     }
 
     > :last-child {
@@ -529,6 +531,8 @@ button {
 
 .minmaxbtn {
   display: flex;
+  gap: 5px;
+  padding: 5px;
   align-items: center;
 
   >div {
@@ -566,7 +570,7 @@ button {
   }
 
   #app {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 60px 1fr;
   }
 
   .card-list-content {
